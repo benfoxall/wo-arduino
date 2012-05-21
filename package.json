@@ -1,0 +1,9 @@
+{
+  "name": "arduino",
+  "version" : "0.0.1",
+  "description": "Ardino at the gallery",
+  "author": "",
+  "dependencies": {
+    "serialport": "0.7.3"
+  }
+}
