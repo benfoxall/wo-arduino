@@ -4,6 +4,12 @@
   "description": "Ardino at the gallery",
   "author": "",
   "dependencies": {
-    "serialport": "0.7.3"
+      "serialport": "0.7.3"
+    , "jade": ">= 0.0.1"
+    , "socket.io": "0.9.6"
+  }
+  , "engines": {
+      "node": "0.6.x"
+    , "npm":  "1.0.x"
   }
 }

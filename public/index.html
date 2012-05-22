@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+  	<h1>Tell is like it is&hellip;</h1>
+  </header>
+  <div role="main">
+  	<form method="post">
+	  <div id="who"></div>
+	  <div id="what">
+	  		<input type="submit" name="what" value="broke the build" />
+	  		<input type="submit" name="what" value="needs coffee" />
+	  		<input type="submit" name="what" value="needs beer" />
+	  </div>
+	</form>
+	<form action="reset" method="post"><input type="submit" value="reset!!"></form>
+  </div>
+
+  <footer>
+
+	<!-- 28113973 -->
+  </footer>
+
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
+  $.getJSON('/people')
+  .then(function(peeps){
+  	$.each(peeps, function(i,peep){
+  		var input = $('<label>');
+  		input.append($('<input>',{type:'radio', value:i, name:'who'}));
+  		input.append(peep);
+
+  		input.appendTo('#who');
+  		
+  		input.prepend($('<img>',{src:'http://img.tweetimag.es/i/'+peep+'_n'}))
+
+  		// $.getJSON('http://api.twitter.com/1/users/show.json?callback=?', {screen_name:peep})
+  		// .done(function(tweep){
+  		// 	input.prepend($('<img>',{src:tweep.profile_image_url}))
+  		// 	// console.log();
+  		// })
+  	})
+  })
+
+  </script>
+</body>
+</html>
